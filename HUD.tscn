@@ -1,0 +1,90 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://assets/Fonts/glossy_sheen/Glossy Sheen Shine DEMO.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://HUD.gd" type="Script" id=2]
+[ext_resource path="res://assets/Fonts/enchanted_land/Enchanted Land.otf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=2]
+size = 45
+outline_size = 4
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 61
+outline_size = 4
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 45
+outline_size = 4
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxEmpty" id=5]
+
+[sub_resource type="DynamicFont" id=6]
+size = 45
+outline_size = 4
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxEmpty" id=7]
+
+[node name="HUD" type="Node"]
+script = ExtResource( 2 )
+
+[node name="PlayButton" type="Button" parent="."]
+margin_left = 96.0
+margin_top = 304.0
+margin_right = 288.0
+margin_bottom = 368.0
+rect_pivot_offset = Vector2( -240, -112 )
+custom_colors/font_color = Color( 1, 0.498039, 0.498039, 1 )
+custom_fonts/font = SubResource( 2 )
+custom_styles/focus = SubResource( 4 )
+text = "Play"
+flat = true
+
+[node name="Title" type="Label" parent="."]
+margin_left = 8.0
+margin_top = 104.0
+margin_right = 376.0
+margin_bottom = 256.0
+custom_colors/font_color = Color( 0.933333, 0.796078, 0.172549, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Adventurer Creator"
+align = 1
+valign = 1
+
+[node name="BackButton" type="Button" parent="."]
+margin_left = 32.0
+margin_top = 24.0
+margin_right = 136.0
+margin_bottom = 72.0
+rect_pivot_offset = Vector2( -240, -112 )
+custom_colors/font_color = Color( 1, 0.498039, 0.498039, 1 )
+custom_fonts/font = SubResource( 3 )
+custom_styles/focus = SubResource( 5 )
+text = "Back"
+flat = true
+
+[node name="QuitButton" type="Button" parent="."]
+margin_left = 96.0
+margin_top = 512.0
+margin_right = 288.0
+margin_bottom = 576.0
+custom_colors/font_color = Color( 1, 0.498039, 0.498039, 1 )
+custom_fonts/font = SubResource( 6 )
+custom_styles/focus = SubResource( 7 )
+text = "Quit"
+flat = true
+icon_align = 1
+
+[connection signal="pressed" from="PlayButton" to="." method="_on_PlayButton_pressed"]
+[connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_QuitButton_pressed"]
